@@ -10,16 +10,27 @@ The UDP Touchpad can handle up to 10 multitouch events.
 ![](documentation/img/grid.svg)
 
 
+# Download
+[Download](https://raw.githubusercontent.com/RobertDamerius/UDPTouchpad/main/android/app/release/app-release.apk) the app from this repository.
+The ``.apk`` file is located in the [android/app/release](android/app/release/) directory.
+
+![](documentation/img/qrcode.svg)
+
+> **Note**<br>
+> In order to install the app on the smartphone, permissions may need to be adjusted to allow apps from unknown sources to be installed.
+
+
 ## Message Protocol
 
-| UDP/IP PROPERTY     | VALUE                      |
-| :-------------------| :------------------------- |
-| Source Port         | random, selected by device |
-| Destination Port    | 10891                      |
-| Destination Address | 239.192.82.74              |
-| Multicast TTL       | 1                          |
-| Message Length      | 136                        |
-| Endianness          | Big-endian                 |
+| UDP/IP PROPERTY     | VALUE                                    |
+| :-------------------| :--------------------------------------- |
+| Source Port         | random, selected by device               |
+| Destination Port    | 10891                                    |
+| Destination Address | 239.192.82.74                            |
+| Multicast TTL       | 1                                        |
+| Message Length      | 136                                      |
+| Endianness          | Big-endian                               |
+| Update Rate         | 20 ms and whenever a touch event appears |
 
 
 **Binary Message Format**
