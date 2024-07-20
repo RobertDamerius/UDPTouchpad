@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200mm"
+   height="100mm"
+   viewBox="0 0 200 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="grid.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.3445927"
+     inkscape:cx="455.30296"
+     inkscape:cy="165.27391"
+     inkscape:window-width="3840"
+     inkscape:window-height="2126"
+     inkscape:window-x="3829"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient18"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0"
+         id="stop18" />
+      <stop
+         style="stop-color:#141414;stop-opacity:1;"
+         offset="1"
+         id="stop19" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18"
+       id="linearGradient17"
+       x1="100"
+       y1="100"
+       x2="100"
+       y2="0"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:url(#linearGradient17);stroke:#1a1a1a;stroke-width:0;stroke-dasharray:none;fill-opacity:1"
+       id="rect1"
+       width="200"
+       height="100"
+       x="0"
+       y="0"
+       ry="0" />
+    <path
+       id="circle5"
+       style="fill:#1a1a1a;stroke:#4d4d4d;stroke-width:0.5;stroke-dasharray:none;opacity:0.5"
+       d="M 150.00015 12.500012 A 37.5 37.5 0 0 0 112.50011 50.000049 A 37.5 37.5 0 0 0 150.00015 87.500085 A 37.5 37.5 0 0 0 187.50018 50.000049 A 37.5 37.5 0 0 0 150.00015 12.500012 z M 150.00015 25.000024 A 25 25 0 0 1 175.00017 50.000049 A 25 25 0 0 1 150.00015 75.000073 A 25 25 0 0 1 125.00012 50.000049 A 25 25 0 0 1 150.00015 25.000024 z " />
+    <path
+       id="circle4"
+       style="fill:#1a1a1a;stroke:#4d4d4d;stroke-width:0.5;stroke-dasharray:none;opacity:0.5"
+       d="M 50.000049 12.500012 A 37.5 37.5 0 0 0 12.500012 50.000049 A 37.5 37.5 0 0 0 50.000049 87.500085 A 37.5 37.5 0 0 0 87.500085 50.000049 A 37.5 37.5 0 0 0 50.000049 12.500012 z M 50.000049 25.000024 A 25 25 0 0 1 75.000073 50.000049 A 25 25 0 0 1 50.000049 75.000073 A 25 25 0 0 1 25.000024 50.000049 A 25 25 0 0 1 50.000049 25.000024 z " />
+    <circle
+       style="fill:#000000;stroke:#4d4d4d;stroke-width:0.5;stroke-dasharray:none;opacity:0.4"
+       id="circle3"
+       cx="150"
+       cy="50"
+       r="25" />
+    <circle
+       style="fill:#000000;stroke:#4d4d4d;stroke-width:0.5;stroke-dasharray:none;opacity:0.4"
+       id="circle2"
+       cx="50"
+       cy="50"
+       r="25" />
+    <path
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:none"
+       d="M 0,50 H 200"
+       id="path5" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:1;stroke-dasharray:none"
+       d="M 50,0 V 100"
+       id="path8" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:1;stroke-dasharray:none"
+       d="M 150,0 V 100"
+       id="path9" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:0.5;stroke-dasharray:none"
+       d="M 0,0 100,100"
+       id="path10" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:0.5;stroke-dasharray:none"
+       d="M 0,100 100,0"
+       id="path11" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:0.5;stroke-dasharray:none"
+       d="M 100,0 200,100"
+       id="path12" />
+    <path
+       style="fill:#00ff00;stroke:#333333;stroke-width:0.5;stroke-dasharray:none"
+       d="M 100,100 200,0"
+       id="path13" />
+    <path
+       style="fill:none;stroke:#333333;stroke-width:1;stroke-dasharray:none"
+       d="M 100,0 V 100"
+       id="path6" />
+    <circle
+       style="fill:#000000;stroke:#333333;stroke-width:1;stroke-dasharray:none;opacity:1"
+       id="path1"
+       cx="50"
+       cy="50"
+       r="12.5" />
+    <circle
+       style="fill:#000000;stroke:#333333;stroke-width:1;stroke-dasharray:none;opacity:1"
+       id="circle1"
+       cx="150"
+       cy="50"
+       r="12.5" />
+    <rect
+       style="opacity:1;fill:none;stroke:#333333;stroke-width:0.499999;stroke-dasharray:none"
+       id="rect19"
+       width="175.25017"
+       height="75.250069"
+       x="12.500011"
+       y="12.500011"
+       ry="3.8368428" />
+  </g>
+</svg>
