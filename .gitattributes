@@ -1,0 +1,6 @@
+* text=auto
+
+*.apk binary
+*.dm binary
+*.jar binary
+
