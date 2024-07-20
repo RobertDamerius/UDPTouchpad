@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private val destinationIP: String = "239.192.82.74"
     private var destinationAddress: InetAddress = InetAddress.getByName(destinationIP)
     private var destinationPort: Int = 10891
+    private var multicastTTL: Int = 1
     private var txBuffer: ByteArray = ByteArray(256) // at least 136
     private var networkOK: Boolean = false
     private lateinit var textViewNetworkStatus: TextView
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().permitAll().build())
         try {
             udpSocket = MulticastSocket()
-            udpSocket.timeToLive = 1
+            udpSocket.timeToLive = multicastTTL
             udpSocket.broadcast = true
         }
         catch (ex: Exception){
@@ -190,11 +191,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 for (i in 0..3) txBuffer[numBytes + i] = (bits shr ((3-i) * 8)).toByte()
                 numBytes += 4
             }
-
-            // clear sensor data, such that only new sensor data appears in the output
-            rotationVector.fill(Float.NaN)
-            acceleration.fill(Float.NaN)
-            angularRate.fill(Float.NaN)
 
             // send message
             val packet = DatagramPacket(txBuffer, numBytes, destinationAddress, destinationPort)
