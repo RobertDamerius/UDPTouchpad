@@ -1,0 +1,4 @@
+.vscode
+/cpp/build
+/cpp/examples/polling/polling
+/cpp/examples/polling/polling.exe
