@@ -59,14 +59,6 @@ class EventSystemNetworkBase: public udptouchpad::detail::NonCopyable {
         udptouchpad::detail::MulticastSocket udpSocket;      // Multicast UDP socket.
         udptouchpad::detail::ConditionVariable retryTimer;   // A timer to wait before retrying to open a UDP socket in case of errors.
 
-        /* Stuff to check the message counter */
-        struct SourceInfo {
-            uint8_t counter;                                                // Counter of last message.
-            std::chrono::time_point<std::chrono::steady_clock> timepoint;   // Timepoint when last message has been received.
-        };
-        std::unordered_map<uint32_t, SourceInfo> sourceMap;                 // Contains past counters for all sources.
-
-
         /**
          * @brief The worker thread function.
          */
@@ -125,42 +117,9 @@ class EventSystemNetworkBase: public udptouchpad::detail::NonCopyable {
                 udptouchpad::detail::SerializationTouchpadMessageUnion* msg = reinterpret_cast<udptouchpad::detail::SerializationTouchpadMessageUnion*>(bytes);
                 if(0x42 == msg->data.header){
                     udptouchpad::detail::NetworkToNativeByteOrder(*msg);
-                    if(!ShouldBeDiscarded(source, msg->data.counter)){
-                        ProcessTouchMessage(source, msg->data);
-                    }
+                    ProcessTouchMessage(source, msg->data);
                 }
             }
-        }
-
-        /**
-         * @brief Check if a message should be discarded based on the counter value.
-         * @param[in] source The source address from where the message was sent.
-         * @param[in] messageCounter Counter of the current message.
-         * @return True if message should be discarded, false otherwise.
-         * @details A message should be discarded if its counter "lies in the past".
-         */
-        bool ShouldBeDiscarded(uint32_t source, uint8_t messageCounter){
-            auto timepointNow = std::chrono::steady_clock::now();
-            bool discardMessage = false;
-            auto got = sourceMap.find(source);
-            if(got == sourceMap.end()){
-                SourceInfo info;
-                info.counter = messageCounter;
-                info.timepoint = timepointNow;
-                sourceMap.insert(std::pair<uint32_t, SourceInfo>(source, info));
-            }
-            else{
-                double secondsToPreviousMessage = 1.0e-9 * static_cast<double>(std::chrono::duration_cast<std::chrono::nanoseconds>(timepointNow - got->second.timepoint).count());
-                bool counterIsOld = ((static_cast<int32_t>(messageCounter) + 255 - static_cast<int32_t>(got->second.counter)) % 256) >= 127;
-                if((secondsToPreviousMessage < 1.0) && counterIsOld){
-                    discardMessage = true;
-                }
-                else{
-                    got->second.counter = messageCounter;
-                    got->second.timepoint = timepointNow;
-                }
-            }
-            return discardMessage;
         }
 };
 

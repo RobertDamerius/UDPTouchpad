@@ -14,6 +14,7 @@
 #include <bit>
 #include <functional>
 #include <unordered_map>
+#include <cmath>
 
 
 /* OS depending */
@@ -35,4 +36,5 @@
 #define UDP_TOUCHPAD_MULTICAST_GROUP_ADDRESS "239.192.82.74"
 #define UDP_TOUCHPAD_MULTICAST_DESTINATION_PORT (10891)
 #define UDP_TOUCHPAD_REOPEN_SOCKET_RETRY_TIME_MS (1000)
+#define UDP_TOUCHPAD_DEVICE_DISCONNECT_TIMEOUT_S (1.0)
 
