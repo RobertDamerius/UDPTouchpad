@@ -5,7 +5,6 @@
 #include <udptouchpad/detail/TouchpadPointer.hpp>
 
 
-
 namespace udptouchpad {
 
 

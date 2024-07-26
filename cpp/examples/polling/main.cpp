@@ -8,7 +8,7 @@ static void CallbackError(udptouchpad::ErrorEvent e){
 }
 
 static void CallbackDeviceConnection(udptouchpad::DeviceConnectionEvent e){
-    std::cerr << "[DEVCON] " << e.ToString() << "\n";    
+    std::cerr << "[DEVCON] " << e.ToString() << "\n";
 }
 
 static void CallbackTouchpadPointer(udptouchpad::TouchpadPointerEvent e){
