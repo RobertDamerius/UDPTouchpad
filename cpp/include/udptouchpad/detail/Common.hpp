@@ -15,6 +15,7 @@
 #include <functional>
 #include <unordered_map>
 #include <cmath>
+#include <sstream>
 
 
 /* OS depending */
