@@ -46,3 +46,33 @@ The ``.apk`` file is located in the [android/app/release](android/app/release/) 
 | 100         | 3 x ``float``  | ``rotationVector``   | Latest 3D rotation vector sensor data from an onboard motion sensor. If no motion sensor is available, all three values are ``NaN``. |
 | 112         | 3 x ``float``  | ``acceleration``     | Latest 3D accelerometer sensor data from an onboard motion sensor in m/s^2. If no motion sensor is available, all three values are ``NaN``. |
 | 124         | 3 x ``float``  | ``angularRate``      | Latest 3D gyroscope sensor data from an onboard motion sensor in rad/s. If no motion sensor is available, all three values are ``NaN``. |
+
+
+## C++ API
+
+The [cpp/include](cpp/include) directory contains a header-only library with which messages sent from all devices can be received and processed.
+Add the include directory to the include path and include the header.
+```
+#include <udptouchpad.hpp>
+```
+Create an ``EventSystem`` and set callback functions.
+```
+udptouchpad::EventSystem eventSystem;
+
+eventSystem.SetErrorCallback(...);
+eventSystem.SetDeviceConnectionCallback(...);
+eventSystem.SetTouchpadPointerCallback(...);
+eventSystem.SetMotionSensorCallback(...);
+```
+Then, continuously poll events
+```
+eventSystem.PollEvents();
+```
+
+### Examples
+Examples can be found in directory [cpp/examples](cpp/examples).
+To build the examples, navigate to the [cpp](cpp) directory and run
+```
+make examples
+```
+
