@@ -37,7 +37,8 @@ int main(int, char**){
     eventSystem.SetTouchpadPointerCallback(CallbackTouchpadPointer);
     eventSystem.SetMotionSensorCallback(CallbackMotionSensor);
 
-    // poll events
+    // start with a fresh and clean event system and poll events
+    eventSystem.Clear();
     while(!terminate){
         std::this_thread::sleep_for(std::chrono::milliseconds(15));
         eventSystem.PollEvents();

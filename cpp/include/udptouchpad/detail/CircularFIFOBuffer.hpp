@@ -59,6 +59,16 @@ template <class T, size_t N> class CircularFIFOBuffer: public NonCopyable {
             return result;
         }
 
+        /**
+         * @brief Clear the circular buffer.
+         * @details This call is thread-safe.
+         */
+        void Clear(void){
+            std::lock_guard<std::mutex> lock(mtx);
+            index = 0;
+            isFull = false;
+        }
+
     private:
         size_t index;             // Points to the next element in the @ref buffer that can be assigned.
         bool isFull;              // True if circular buffer is full.

@@ -20,6 +20,11 @@ namespace detail {
 class DeviceDatabase {
     public:
         /**
+         * @brief Destroy the device database.
+         */
+        ~DeviceDatabase(){ Clear(); }
+
+        /**
          * @brief Push a new message, received from a specific device, to the database.
          * @param[in] deviceID ID of the device, e.g. the source address of the message.
          * @param[in] msg The message that has been received from the specified device.
@@ -118,6 +123,19 @@ class DeviceDatabase {
                     it++;
                 }
             }
+        }
+
+        /**
+         * @brief Clear the database and remove all events.
+         * @details This function is thread-safe.
+         */
+        void Clear(void){
+            std::lock_guard<std::mutex> lock(mtx);
+            devices.clear();
+            for(auto&& e : events){
+                delete e;
+            }
+            events.clear();
         }
 
     private:

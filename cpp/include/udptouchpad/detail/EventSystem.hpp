@@ -19,6 +19,14 @@ namespace udptouchpad {
 class EventSystem: public udptouchpad::detail::EventSystemNetworkBase {
     public:
         /**
+         * @brief Clear all events and reset the internal device database.
+         */
+        void Clear(void){
+            errorBuffer.Clear();
+            deviceDatabase.Clear();
+        }
+
+        /**
          * @brief Set callback function for error events.
          * @param[in] f The callback function with prototype void(udptouchpad::ErrorEvent).
          */
